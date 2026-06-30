@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+build/
+dist/
+
+# Environment / secrets
+.env
+*.key
+*.pem
+
+# ML artifacts — large, don't belong in git
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+data/raw/
+data/processed/
+mlruns/
+wandb/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Kubernetes — generated/local
+deployment/kubernetes/**/secrets.yaml
+*.kubeconfig
