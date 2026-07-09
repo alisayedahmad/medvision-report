@@ -1,4 +1,4 @@
-"""Unit tests for ChestXray14Dataset. Synthetic CSV + PNGs, no real data needed."""
+"""Unit tests for ChestXray14Dataset. Synthetic CSV + PNGs, no real data needed """
 
 import numpy as np
 import pandas as pd
