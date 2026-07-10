@@ -33,6 +33,7 @@ class ChestXray14Dataset(Dataset):
     def __init__(
         self,
         data_dir: str | Path,
+        labels_csv: str | Path | None = None,
         split_csv: str | Path | None = None,
         use_clahe: bool = True,
         use_lung_mask: bool = True,
@@ -48,11 +49,11 @@ class ChestXray14Dataset(Dataset):
         self.mean = mean
         self.std = std
 
-        labels_csv = self.data_dir / "Data_Entry_2017.csv"
-        if not labels_csv.exists():
-            raise FileNotFoundError(f"Labels CSV not found at {labels_csv}")
+        labels_path = Path(labels_csv) if labels_csv else self.data_dir / "Data_Entry_2017.csv"
+        if not labels_path.exists():
+            raise FileNotFoundError(f"Labels CSV not found at {labels_path}")
 
-        df = pd.read_csv(labels_csv)
+        df = pd.read_csv(labels_path)
 
         # Filter to split if provided (train/val/test list of filenames)
         if split_csv is not None:
