@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "model": "dinov2_lora",
+      "trainable_params": 153614,
+      "total_params": 22210190,
+      "mean_latency_ms_per_image": 6.04,
+      "per_pathology_auc": {
+        "Atelectasis": 0.7305,
+        "Cardiomegaly": 0.6968,
+        "Consolidation": 0.7503,
+        "Edema": 0.8252,
+        "Effusion": 0.8425,
+        "Emphysema": 0.8295,
+        "Fibrosis": 0.7158,
+        "Hernia": 0.8908,
+        "Infiltration": 0.6648,
+        "Mass": 0.7089,
+        "Nodule": 0.6402,
+        "Pleural_Thickening": 0.7834,
+        "Pneumonia": 0.5886,
+        "Pneumothorax": 0.7899
+      },
+      "mean_auc": 0.7469
+    },
+    {
+      "model": "unet_convnext",
+      "trainable_params": 31927566,
+      "total_params": 31927566,
+      "mean_latency_ms_per_image": 6.32,
+      "per_pathology_auc": {
+        "Atelectasis": 0.679,
+        "Cardiomegaly": 0.587,
+        "Consolidation": 0.7945,
+        "Edema": 0.734,
+        "Effusion": 0.8393,
+        "Emphysema": 0.6783,
+        "Fibrosis": 0.6407,
+        "Hernia": 0.4938,
+        "Infiltration": 0.6675,
+        "Mass": 0.6751,
+        "Nodule": 0.6953,
+        "Pleural_Thickening": 0.7104,
+        "Pneumonia": 0.5074,
+        "Pneumothorax": 0.7784
+      },
+      "mean_auc": 0.6772
+    }
+  ]
+}
