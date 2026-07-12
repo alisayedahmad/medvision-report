@@ -15,8 +15,8 @@ model:
   pretrained: true
 
 training:
-  batch_size: 4              # smaller than DINOv2 - full fine-tune uses more memory
-  grad_accum_steps: 4        # effective batch = 16
+  batch_size: 16
+  grad_accum_steps: 1
   num_epochs: 20
   learning_rate: 1.0e-4      # lower LR for full fine-tuning
   weight_decay: 1.0e-4
