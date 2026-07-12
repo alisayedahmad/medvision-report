@@ -40,3 +40,9 @@ htmlcov/
 # Kubernetes — generated/local
 deployment/kubernetes/**/secrets.yaml
 *.kubeconfig
+#images 
+data/images/
+data/sample/
+data/sample_labels.csv
+
+
