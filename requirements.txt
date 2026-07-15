@@ -1,8 +1,6 @@
-# Core — added as code introduced them
+# Lightweight — installed everywhere including CI
 numpy>=1.24
 httpx>=0.27
-
-# Dev tooling
 pytest>=8.0
 ruff>=0.5
 black>=24.0
