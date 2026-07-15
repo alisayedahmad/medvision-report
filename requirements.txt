@@ -1,8 +1,8 @@
-# Phase 0 — dev tooling only. Real dependencies (torch, transformers, monai, etc.)
-# get added stage by stage, in the commit that actually introduces the code using them.
-# Keeping this list honest to what's installed avoids the classic "requirements.txt
-# lies about what the project needs" problem.
+# Core — added as code introduced them
+numpy>=1.24
+httpx>=0.27
 
+# Dev tooling
 pytest>=8.0
 ruff>=0.5
 black>=24.0
