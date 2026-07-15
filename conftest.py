@@ -1,9 +1,7 @@
 import importlib
-import os
 
 # Tests that need PyTorch + ML stack. These run locally, not in CI.
 # CI only installs lightweight deps (numpy, httpx, pytest, ruff).
-
 _TORCH_TESTS = [
     "tests/unit/test_dinov2_detector.py",
     "tests/unit/test_unet_convnext.py",
