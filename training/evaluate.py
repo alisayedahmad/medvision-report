@@ -60,7 +60,9 @@ def build_dinov2(cfg: Config, ckpt_path: Path, device: torch.device) -> torch.nn
 
 
 def build_unet(cfg: Config, ckpt_path: Path, device: torch.device) -> torch.nn.Module:
+
     model = UNetClassifier(
+
         num_classes=cfg.model["num_classes"],
         pretrained=False,  # weights come from checkpoint
     )
@@ -74,11 +76,14 @@ def evaluate_model(
     loader: DataLoader,
     device: torch.device,
 ) -> dict:
+    
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
 
+
     targets, preds, latency_ms = run_inference(model, loader, device)
     aucs = compute_auc(targets, preds, class_names=PATHOLOGIES)
+
 
     return {
         "model": name,
@@ -87,6 +92,7 @@ def evaluate_model(
         "mean_latency_ms_per_image": round(latency_ms, 2),
         "per_pathology_auc": {k: round(v, 4) for k, v in aucs.items() if k != "mean_auc"},
         "mean_auc": round(aucs["mean_auc"], 4),
+
     }
 
 
@@ -99,10 +105,14 @@ def main() -> None:
     parser.add_argument("--output", default="results/model_comparison.json")
     args = parser.parse_args()
 
+
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"device: {device}")
 
     cfg_dinov2 = Config.from_yaml(args.dinov2_config)
+
+
 
     dataset = ChestXray14Dataset(
         data_dir=cfg_dinov2.data["data_dir"],
@@ -120,12 +130,14 @@ def main() -> None:
     print(f"eval set: {len(val_idx)} images")
 
     val_loader = DataLoader(
+
         Subset(dataset, val_idx),
         batch_size=16,
         shuffle=False,
         num_workers=0,
         pin_memory=(device.type == "cuda"),
     )
+
 
     results = []
 

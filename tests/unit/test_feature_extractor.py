@@ -6,7 +6,6 @@ import pytest
 from report_generation.feature_extractor import (
     PATHOLOGIES,
     Finding,
-    StudyFindings,
     classify_severity,
     extract_findings,
     localize_from_mask,

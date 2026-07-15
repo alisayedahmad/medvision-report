@@ -1,7 +1,6 @@
 """Unit tests for evaluation metrics."""
 
 import numpy as np
-import pytest
 
 from models.metrics import compute_auc, dice_score, hausdorff_distance, sensitivity_specificity
 

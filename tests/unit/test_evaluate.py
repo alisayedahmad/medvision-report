@@ -1,6 +1,5 @@
 """Unit tests for evaluate.run_inference. Synthetic dataset, no checkpoints."""
 
-import numpy as np
 import torch
 from torch.utils.data import DataLoader
 

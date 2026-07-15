@@ -1,4 +1,3 @@
-"""PyTorch Dataset for NIH ChestX-ray14."""
 
 from __future__ import annotations
 
@@ -19,7 +18,6 @@ PATHOLOGIES = [
     "Infiltration", "Mass", "Nodule", "Pleural_Thickening",
     "Pneumonia", "Pneumothorax",
 ]
-
 
 class ChestXray14Dataset(Dataset):
     """Loads NIH ChestX-ray14 images with multi-label pathology targets.

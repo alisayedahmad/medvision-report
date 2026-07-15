@@ -13,7 +13,6 @@ must flag uncertainty. That's the whole anti-hallucination strategy
 
 from __future__ import annotations
 
-import json
 
 from typing import Any
 

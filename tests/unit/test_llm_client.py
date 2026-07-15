@@ -1,4 +1,4 @@
-"""Tests for LLM client. All API calls mocked — no keys needed."""
+"""Tests for LLM client. All API calls mocked — no keys needed """
 
 import asyncio
 from unittest.mock import AsyncMock, MagicMock, patch

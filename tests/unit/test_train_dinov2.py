@@ -1,10 +1,9 @@
 """Unit tests for train_dinov2 helpers. Synthetic fixtures, no GPU/network."""
 
-import numpy as np
 import pandas as pd
 import pytest
 import torch
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader
 
 from training.train_dinov2 import evaluate, patient_level_split
 
