@@ -19,6 +19,12 @@ _PIL_TESTS = [
     "tests/unit/test_lung_segmentation.py",
 ]
 
+# NLP evaluation metrics — sacrebleu, rouge-score, bert-score.
+# Installed via requirements-eval.txt, not in CI.
+_EVAL_TESTS = [
+    "tests/unit/test_nlp_metrics.py",
+]
+
 
 def _available(module: str) -> bool:
     try:
@@ -35,3 +41,6 @@ if not _available("torch"):
 
 if not _available("PIL"):
     collect_ignore.extend(_PIL_TESTS)
+
+if not _available("sacrebleu"):
+    collect_ignore.extend(_EVAL_TESTS)

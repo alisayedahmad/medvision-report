@@ -1,0 +1,5 @@
+# NLP evaluation — install locally, not in CI
+# pip install -r requirements-eval.txt --break-system-packages
+sacrebleu>=2.3
+rouge-score>=0.1.2
+bert-score>=0.3.13
