@@ -1,0 +1,29 @@
+[
+  {
+    "generated": "There is consolidation in the right lower lobe. No pleural effusion. Heart size is normal.",
+    "reference": "Right lower lobe consolidation noted. No effusion identified. Cardiac silhouette within normal limits.",
+    "findings": {
+      "findings": [{"pathology": "Consolidation"}],
+      "negatives": ["Effusion", "Cardiomegaly"],
+      "uncertain": []
+    }
+  },
+  {
+    "generated": "No acute cardiopulmonary abnormality. Lungs are clear bilaterally.",
+    "reference": "Clear lungs. No focal consolidation, pleural effusion, or pneumothorax.",
+    "findings": {
+      "findings": [],
+      "negatives": ["Consolidation", "Effusion", "Pneumothorax"],
+      "uncertain": []
+    }
+  },
+  {
+    "generated": "Possible pneumonia in the left lower lobe. Small left pleural effusion.",
+    "reference": "Left lower lobe opacity suspicious for pneumonia. Trace left pleural effusion.",
+    "findings": {
+      "findings": [{"pathology": "Pneumonia"}, {"pathology": "Effusion"}],
+      "negatives": [],
+      "uncertain": []
+    }
+  }
+]
