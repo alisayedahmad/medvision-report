@@ -1,9 +1,12 @@
 """Tests for evaluation.nlp_metrics.
 
 BLEU and ROUGE tests run in CI (sacrebleu and rouge-score are lightweight).
+
 BERTScore tests are skipped when bert_score is not installed — same pattern
 as torch tests. We test score ranges, not exact values, because these
-metrics are sensitive to tokenization and library version.
+metrics are sensitive to tokenization and library version
+so we don't want to break the CI for minor library updates
+
 """
 
 import importlib
@@ -51,7 +54,7 @@ REFERENCE_B = (
 # -----------------------------------------------------------------------
 
 class TestSinglePairNoBert:
-    """BLEU and ROUGE only — lightweight, runs everywhere."""
+    """BLEU and ROUGE only — lightweight, runs everywhere, no BERTScore dependency"""
 
     def test_good_match_scores_higher(self):
         good = compute_nlp_metrics(GENERATED_GOOD, REFERENCE_A, use_bertscore=False)
@@ -93,9 +96,9 @@ class TestSinglePairNoBert:
             assert 0.0 <= v <= 1.0
 
 
-# -----------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # Batch evaluation
-# -----------------------------------------------------------------------
+# -----------------------------------------------------------
 
 class TestBatchMetrics:
     """Batch interface — corpus BLEU + aggregates."""
@@ -155,6 +158,7 @@ class TestBERTScore:
     """These run locally only — need bert_score + model download."""
 
     def test_bertscore_returns_nonzero(self):
+        # verify that BERTScore is computed and nonzero for a good match
         scores = compute_nlp_metrics(GENERATED_GOOD, REFERENCE_A, use_bertscore=True)
         assert scores.bertscore_f1 > 0.0
 

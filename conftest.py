@@ -23,6 +23,7 @@ _PIL_TESTS = [
 # Installed via requirements-eval.txt, not in CI.
 _EVAL_TESTS = [
     "tests/unit/test_nlp_metrics.py",
+    "tests/unit/test_run_evaluation.py",
 ]
 
 

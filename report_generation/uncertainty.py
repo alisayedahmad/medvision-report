@@ -1,9 +1,9 @@
-"""Confidence thresholding and uncertainty flagging.
+"""Confidence thresholding and uncertainty flagging:
 
-The vision model's confidence is a noisy signal. When it's low, the
-report needs to say so instead of committing to findings that aren't
-really there. This module decides when to raise the uncertainty flag
-and what to tell the LLM about it.
+The vision model's confidence is a noisy signal.
+When it's low, the report needs to say so instead of committing to findings that aren't really there. This module decides when to raise the uncertainty flag
+and what to tell the LLM about it
+
 """
 
 from __future__ import annotations
@@ -44,6 +44,7 @@ def assess_uncertainty(
     """Decide whether to flag this study as uncertain.
 
     Three failure modes to catch:
+    
     1. Nothing is confident — max prob well below detection threshold
     2. Many predictions sit in the gray zone — model can't commit
     3. All findings are borderline — no strong signal above noise

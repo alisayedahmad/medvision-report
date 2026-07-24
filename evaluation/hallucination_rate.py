@@ -4,6 +4,8 @@ Runs hallucination_checker.check_report on every (report, findings) pair
 and aggregates the results. Answers questions like: what fraction of
 reports contain at least one hallucination? Which pathologies get
 invented most often? How does hallucination rate vary with confidence?
+
+
 """
 
 from __future__ import annotations
@@ -18,7 +20,8 @@ from report_generation.hallucination_checker import HallucinationReport, check_r
 
 @dataclass
 class BatchHallucinationResult:
-    """Aggregated hallucination stats across N reports."""
+    """Aggregated hallucination stats across N reports
+    """
 
     n_reports: int
     n_clean: int  # reports with zero hallucinations

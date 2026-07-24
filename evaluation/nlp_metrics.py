@@ -1,3 +1,15 @@
+"""NLP evaluation metrics for generated radiology reports
+
+
+Compares generated reports against radiologist-written references using
+three complementary metrics: BLEU-4 (lexical n-gram overlap), ROUGE-L
+(longest common subsequence), and BERTScore (semantic embedding similarity).
+
+No single metric tells the full story for clinical text. BLEU penalizes
+valid paraphrasing, ROUGE ignores word order, BERTScore can be fooled
+by negation. Use all three together — that's why they're bundled here.
+"""
+
 from __future__ import annotations
 
 import statistics
@@ -52,7 +64,7 @@ def _compute_rouge_l(generated: str, reference: str) -> tuple[float, float, floa
 
 
 # fp16 cuts memory 3.5GB → 1.75GB, fits on 4GB card
-_BERTSCORE_MODEL = "microsoft/deberta-xlarge-mnli"
+_BERTSCORE_MODEL = "roberta-large"
 _BERTSCORE_BATCH_SIZE = 8
 
 

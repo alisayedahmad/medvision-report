@@ -1,4 +1,4 @@
-"""End-to-end pipeline tests. LLM mocked, everything else real."""
+"""End-to-end pipeline tests. LLM mocked, everything else real """
 
 import asyncio
 from unittest.mock import AsyncMock, MagicMock, patch
